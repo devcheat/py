@@ -1,4 +1,0 @@
-**PYTHON**
-===
-
-Pythonic codes
