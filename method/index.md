@@ -1,4 +1,4 @@
-**Class Method**
+**Methods**
 ===
 
 - [**Class Method**](#class-method)
@@ -9,6 +9,7 @@
   - [Implementation](#implementation)
 
 
+# Class Method
 
 The @classmethod decorator is a built-in function decorator that is an expression that gets evaluated after your function is defined. The result of that evaluation shadows your function definition. 
 A class method receives the class as an implicit first argument, just like an instance method receives the instance 
@@ -26,8 +27,7 @@ A class method is a method that is bound to the class and not the object of the 
 They have the access to the state of the class as it takes a class parameter that points to the class and not the object instance.
 It can modify a class state that would apply across all the instances of the class. For example, it can modify a class variable that will be applicable to all the instances.
  
-**Static Method**
-===
+# Static Method
 
 A static method does not receive an implicit first argument. 
 
