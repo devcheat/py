@@ -6,7 +6,7 @@
 A package is a hierarchical file directory structure that defines a single Python application environment that consists of modules and subpackages and sub-subpackages, and so on.
 
 Consider a file Pots.py available in Phone directory. This file has the following line of source code −
-```python
+```py
 #!/usr/bin/python3
 
 def Pots():
@@ -23,13 +23,13 @@ Now, create one more file `__init__.py` in the Phone directory −
 Phone/__init__.py
 ```
 To make all of your functions available when you have imported Phone, you need to put explicit import statements in `__init__.py` as follows −
-```
+```py
 from Pots import Pots
 from Isdn import Isdn
 from G3 import G3
 ```
 After you add these lines to `__init__.py`, you have all of these classes available when you import the Phone package.
-```python
+```py
 #!/usr/bin/python3
 
 # Now import your Phone Package.
