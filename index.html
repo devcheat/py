@@ -1,166 +1,122 @@
-<html><head>
-<style>
-  /* width */
-::-webkit-scrollbar {
-  width: 5px;
-}
+<!DOCTYPE html>
+<html lang="en">
 
-/* Track */
-::-webkit-scrollbar-track {
-  box-shadow: inset 0 0 5px grey; 
-  border-radius: 10px;
-}
- 
-/* Handle */
-::-webkit-scrollbar-thumb {
-  background: #333; 
-  border-radius: 10px;
-}
-
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  background: #b30000; 
-}
-body {
-  margin: 0 auto;
-  width: 100%;
-
-  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
-}
-
-*{
-  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
-}
-
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  width: 15%;
-  background-color: #ffffff;
-  position: fixed;
-  height: 100%;
-  overflow: auto;
-  display: block;
-}
-ul:hover{
-  background-color: #fcffd3;
-}
-
-
-
-li a {
-  display: block;
-  color: #000;
-  padding: 8px 10px;
-  text-decoration: none;  
-}
-
-li a.active {
-  background-color: #04AA6D;
-  color: white;
-}
-
-li a:hover:not(.active) {
-  background-color: #3a3a3a;
-  color: #ffffff;
-}
-
-.title {
-    background-color: #ffffff;
-    color: #E9F118;
-}
-
-h1{
-  background-color: #4c4c4c;
-  color: rgb(250, 250, 250);
-  padding-bottom: 4px;
-  margin: 0px;
-  text-align: center;
-  text-shadow: 5px 5px 4px rgb(0, 0, 0);
-}
-
-</style>
-
-</head>
-  <body scroll="no" style="overflow: hidden">
-    
-    <div id="menu-bar"><ul class="tab">
-      <h1 id="h1">Python 3x</h1>
-      <li class="tablinks"><a href="https://devcheat.github.io/py/encrypt/cesar/index" target="IFcontent">cesar Encrypt</a></li>
-      <li class="tablinks"><a href="https://devcheat.github.io/py/language/Operator" target="IFcontent">Python/Operator</a></li>
-      <li class="tablinks"><a href="https://devcheat.github.io/py/language/String Formatting" target="IFcontent">Python/String Formatting</a></li>
-      <li class="tablinks"><a href="https://devcheat.github.io/py/language/casting" target="IFcontent">Python/casting</a></li>
-      <li class="tablinks"><a href="https://devcheat.github.io/py/language/class" target="IFcontent">Python/class</a></li>
-      <li class="tablinks"><a href="https://devcheat.github.io/py/language/datetime" target="IFcontent">Python/datetime</a></li>
-      <li class="tablinks"><a href="https://devcheat.github.io/py/language/decorator" target="IFcontent">Python/decorator</a></li>
-      <li class="tablinks"><a href="https://devcheat.github.io/py/language/dictionary" target="IFcontent">Python/dictionary</a></li>
-      <li class="tablinks"><a href="https://devcheat.github.io/py/language/encapsulation" target="IFcontent">Python/encapsulation</a></li>
-      <li class="tablinks"><a href="https://devcheat.github.io/py/language/exception" target="IFcontent">Python/exception</a></li>
-      <li class="tablinks"><a href="https://devcheat.github.io/py/language/file" target="IFcontent">Python/file</a></li>
-      <li class="tablinks"><a href="https://devcheat.github.io/py/language/function" target="IFcontent">Python/function</a></li>
-      <li class="tablinks"><a href="https://devcheat.github.io/py/language/generator" target="IFcontent">Python/generator</a></li>
-      <li class="tablinks"><a href="https://devcheat.github.io/py/language/ifelse" target="IFcontent">Python/ifelse</a></li>
-      <li class="tablinks"><a href="https://devcheat.github.io/py/language/lambda" target="IFcontent">Python/lambda</a></li>
-      <li class="tablinks"><a href="https://devcheat.github.io/py/language/loop" target="IFcontent">Python/loop</a></li>
-      <li class="tablinks"><a href="https://devcheat.github.io/py/language/method" target="IFcontent">Python/method</a></li>
-      <li class="tablinks"><a href="https://devcheat.github.io/py/language/module" target="IFcontent">Python/module</a></li><li class="tablinks"><a href="https://devcheat.github.io/py/language/package" target="IFcontent">Python/package</a></li><li class="tablinks"><a href="https://devcheat.github.io/py/language/variable" target="IFcontent">Python/variable</a></li><li class="tablinks"><a href="https://devcheat.github.io/py/password/index" target="IFcontent">Brute Force Password Cracker</a></li><li class="tablinks"><a href="https://devcheat.github.io/py/regx/index" target="IFcontent">Regular Expressions in Python</a></li><li class="tablinks"><a href="https://devcheat.github.io/py/rgb/index" target="IFcontent">RGB Color in Console</a></li><li class="tablinks"><a href="https://devcheat.github.io/py/sqlite/index" target="IFcontent">SQLite with Python</a></li></ul>
-    </div>
-    <script>
-
-      var baseUrl = window.location.href;
-      let repoPath = window.location.host.replace(".github.io","")+ window.location.pathname;
-      //document.getElementById("h1").innerHTML = repoPath;
-
-      (async () => {
-        debugger;
-        const response = await fetch(`https://api.github.com/repos/${repoPath}git/trees/main?recursive=1`);
-        const data = await response.json();
-        let htmlString = '';
-
-        
-
-        for (let file of data.tree) 
-        {
-
-          if(file.path.endsWith(".md") == false)
-            continue;
-
-          var actualpath = baseUrl + file.path;
-          var absoluteUrl = actualpath.replace(".md", "");//.replace("/index", "");
-
-          var fileName = (file.path);
-          fileName = (fileName).replace(".md", "");
-          var displayName = fileName.replace("/index","")
-
-          /*displayName = fileName.split('/');
-          
-          if (displayName.length >= 2) {
-              displayName = `<b>${displayName[0]}</b>/${displayName[displayName.length - 1]}`;
-          }
-          else {
-              displayName = `${displayName[displayName.length - 1]}`;
-          }
-          */
-
-          displayName = displayName.replace("/index","");
-          
-
-          htmlString += `<li class="tablinks"><a href="${absoluteUrl}" target="IFcontent">${displayName}</a></li>`;
-
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>doc</title>
+    <style>
+        body {
+            font-family: Consolas;
+            background-color: rgb(255, 255, 255);
+            color: rgb(44, 44, 44);
         }
 
-        htmlString += '';
-        var result= '<ul class="tab">';
-        result += htmlString;  
-        result += '</ul>';
+        .link,
+        .header1 {
+            background-color: transparent;
+            color: rgb(65, 65, 65);
+            margin: 5px;
+            border: 1px solid rgba(255, 255, 255, 0);
 
-        document.getElementById('menu-bar').innerHTML = result;
-      })()
-    </script>
-    <div style="margin-left:1%;padding:1px 1px;height:100%;">        
-        <iframe id="cont" name="IFcontent" src="display:blank" frameborder="0" style="width: 100%;height: 100%;"></iframe>
+            text-shadow: 2px 2px 8px rgb(255, 255, 255);
+            align-items: center;
+            font-style: normal;
+            font-size: 20px;
+            display: flex;
+            transition: 0.53s;
+        }
+
+        .link:hover {
+            color: rgba(40, 40, 40, 0.944);
+            font-weight: bolder;
+            text-shadow: 1px 1px 18px rgb(0, 213, 255);
+            border-radius: 1px 1px;
+            font-size: 25px;
+            background-color: aqua;
+            
+        }
+
+        .header1 { font-size: 35px; }
+
+        .header2 {
+            font-size: 30px;
+            background-color: rgb(45, 45, 45);
+            padding: 10px;
+            color: aliceblue;
+        }
+        .figcaption { font-size: 20px; }
+        .icon { font-size: 30px; }
+        .bookshelf { background-color: rgba(231, 231, 231, 0); max-width: 1080px; margin: 0 auto;}
+        img { width: 100px; height: 100px; }
+        .icon {transition: 0.53s; }
+        .icon:hover{ transform:rotateZ(30deg); }
+        a:link { text-decoration: none; }
+        a:visited { text-decoration: none; }
+        a:hover { text-decoration: none; }
+        a:active { text-decoration: none; }
+    </style>
+</head>
+
+<body>
+<div id="h2content">&#128218; Loading... 
+        <script>
+        function GenerateIndex(elementId) {
+            debugger;
+            var baseUrl = window.location.href;
+            let repoPath = window.location.host.replace(".github.io","")+ window.location.pathname;
+            
+            //repoPath = "devcheat/cli/";//comment this line before deploy
+
+            let fetchUrl = `https://api.github.com/repos/${repoPath}git/trees/main?recursive=1`;
+
+            (async () => {
+                debugger;
+                const response = await fetch(fetchUrl);
+                const data = await response.json();
+
+                let htmlString = "";
+                if (repoPath != null)
+                    htmlString = `<h2 id="h2" class="header2">&#128218; ${repoPath}</h2>`;
+
+                for (let file of data.tree) {
+                    if (file.path.toLowerCase().endsWith('.md') == true) {
+                        var actualpath = baseUrl + file.path;
+                        var absoluteUrl = actualpath.replace(".md", "").replace("/index", "");
+
+                        var fileName = (file.path).replace("/index.md", "");
+                        fileName = (fileName).replace(".md", "");
+
+                        var displayName = fileName.split('/');
+                        if (displayName.length >= 2) {
+                            displayName = `<div class="icon">&#128218;</div><b>${displayName[0]}</b>/${displayName[displayName.length - 1]}`;
+                        }
+                        else {
+                            displayName = `<div class="icon">&#128196;</div> ${displayName[displayName.length - 1]}`;
+                        }
+
+                        var randomColor = "#" + Math.floor(Math.random() * 16777215).toString(16);
+
+                        htmlString += `<a class="link" href="${absoluteUrl}">${displayName}</a>`;
+                    }
+                }
+
+                htmlString += '';
+                var result = "<div class='bookshelf'>";
+                result += htmlString;
+                result += '</div>';
+
+                document.getElementById(elementId).innerHTML = result;
+            })();
+        }
+
+        //invoker
+        
+        GenerateIndex("h2content");
+        </script>
     </div>
+    <hr/>  
+</body>
 
-
-</body></html>
+</html>
