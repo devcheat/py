@@ -28,14 +28,14 @@ root.mainloop()
 
 ## Adding Widgets
 
-### 1. Labels
+## 1. Labels
 
-#### Synatx:
+### Synatx:
 ```
 label = tk.Label(root, options)
 ```
 
-#### Tkinter Label Options
+### Tkinter Label Options
 - `anchor`: This option is used to control the positioning of the text if the widget has more space than required for the text. The default is anchor=CENTER, which centers the text in the available space.
 - `bg`: This option is used to set the normal background color displayed behind the label and indicator.
 height:This option is used to set the vertical dimension of the new frame.
@@ -54,7 +54,7 @@ cursor:It is used to specify what cursor to show when the mouse is moved over th
 - `underline`:This
 - `wraplength`:Instead of having only one line as the label text it can be broken into to the number of lines where each line has the number of characters specified to this option.
 
-#### Example
+### Example
 ```python
 import tkinter as tk
 
@@ -67,7 +67,7 @@ label.pack()
 
 root.mainloop()
 ```
-#### ttk example 
+### ttk example 
 ```py
 import tkinter as tk
 from tkinter import ttk
@@ -82,17 +82,17 @@ label.pack()
 
 ```
 
-### 2. Buttons
+## 2. Buttons
 
 Buttons trigger actions when clicked.
 
-#### Syntax:
+### Syntax:
 ```
 button = tk.Button(root, options)
 button = ttk.Button(root, options)
 ```
 
-#### Tkinter Button Options
+### Tkinter Button Options
 
 - `activebackground`: Background color when the button is under the cursor.
 - `activeforeground`: Foreground color when the button is under the cursor.
@@ -118,12 +118,12 @@ button = ttk.Button(root, options)
 - `width`: Width of the button in letters
 - `wraplength`: If this value is set to a positive number, the text lines will be wrapped to fit within this length.
 
-#### Methods
+### Methods
 - `flash()`: Causes the button to flash several times between active and normal colors. Leaves the button in the state it was in originally. Ignored if the button is disabled.
 - `invoke()`: Calls the button’s command callback, and returns what that function returns. Has no effect if the button is disabled or there is no callback.
 
 
-#### Example:
+### Example:
 ```python
 import tkinter as tk
 
@@ -142,7 +142,7 @@ button.pack()
 root.mainloop()
 ```
 
-#### ttk Example
+### ttk Example
 ```py
 import tkinter as tk
 from tkinter import ttk
@@ -159,7 +159,7 @@ button.pack()
 root.mainloop()
 ```
 
-#### Example Using Options:
+### Example Using Options:
 ```py
 import tkinter as tk
 
@@ -199,16 +199,16 @@ root.mainloop()
 
 
 
-### 3. Entry Widgets
+## 3. Entry Widgets
 
 Entry widgets allow users to input text.
 
-#### Synatx:
+### Synatx:
 ```
 entry = tk.Entry(root, options)
 ```
 
-#### Tkinter LabEntry Options
+### Tkinter LabEntry Options
 - `bg` : The normal background color displayed behind the label and indicator. 
 - `bd` : The size of the border around the indicator. Default is 2 pixels. 
 - `font` : The font used for the text. 
@@ -218,14 +218,14 @@ entry = tk.Entry(root, options)
 - `show` : Normally, the characters that the user types appear in the entry. To make a .password. entry that echoes each character as an asterisk, set show=”*”. 
 - `textvariable` : In order to be able to retrieve the current text from your entry widget, you must set this option to an instance of the StringVar class.
 
-#### Methods: The various methods provided by the entry widget are: 
+### Methods: The various methods provided by the entry widget are: 
 
 - `get()` : Returns the entry’s current text as a string. 
 - `delete()` : Deletes characters from the widget 
 - `insert ( index, 'name') `: Inserts string ‘name’ before the character at the given index. 
 
 
-#### Example:
+### Example:
 
 ```python
 import tkinter as tk
@@ -249,7 +249,7 @@ button.pack()
 root.mainloop()
 ```
 
-#### ttk example
+### ttk example
 ```py
 import tkinter as tk
 from tkinter import ttk
@@ -266,16 +266,16 @@ entry.pack()
 root.mainloop()
 ```
 
-### 4. Checkbuttons
+## 4. Checkbuttons
 
 Checkbuttons allow users to select multiple options.
 
-#### Synatx:
+### Synatx:
 ```
 check1 = tk.Checkbutton(root, options)
 ```
 
-#### Tkinter Checkbutton Options
+### Tkinter Checkbutton Options
 The following are commonly used Options that can be used with this widget:
 
 - `activebackground`: This option used to represent the background color when the checkbutton is under the cursor.
@@ -306,7 +306,7 @@ underline: This option used to represent the index of the character in the text 
 - `width`: This option used to represents the width of the checkbutton. and also represented in the number of characters that are represented in the form of texts.
 - `wraplength`: This option will be broken text into the number of pieces.
 
-#### Methods
+### Methods
 Methods used in this widgets are as follows:
 
 - `deselect()`: This method is called to turn off the checkbutton.
@@ -315,7 +315,7 @@ Methods used in this widgets are as follows:
 - `select()`: This method is called to turn on the checkbutton.
 - `toggle()`: This method is used to toggle between the different Checkbuttons.
 
-#### Example
+### Example
 ```python
 import tkinter as tk
 
@@ -345,7 +345,7 @@ label.pack()
 root.mainloop()
 ```
 
-#### ttk example
+### ttk example
 ```py
 import tkinter as tk
 from tkinter import ttk
@@ -363,7 +363,7 @@ chkbtn2 = ttk.Checkbutton(root, text ='Checkbutton2',takefocus = 0)
 root.mainloop()                
 ```
 
-### 5. Radio Buttons
+## 5. Radio Buttons
 
 Radio buttons allow users to select one option from multiple choices.
 
@@ -390,16 +390,16 @@ label.pack()
 root.mainloop()
 ```
 
-### 6. Listbox
+## 6. Listbox
 
 Listboxes allow users to select from a list of options.
 
-#### Synbatx:
+### Synbatx:
 ```
 listbox = Listbox(root, bg, fg, bd, height, width, font, ..) 
 ```
 
-#### Optional parameters
+### Optional parameters
 
 - `root` – root window.
 - `bg` – background colour
@@ -413,7 +413,7 @@ listbox = Listbox(root, bg, fg, bd, height, width, font, ..)
 - `xscrollcommand` – for scrolling horizontally.
 - `cursor` – The cursor on the widget which can be an arrow, a dot etc.
 
-#### Common methods
+### Common methods
 
 - `yview` – allows the widget to be vertically scrollable.
 - `xview` – allows the widget to be horizontally scrollable.
@@ -425,7 +425,7 @@ listbox = Listbox(root, bg, fg, bd, height, width, font, ..)
 - `curseselection()` – returns a tuple for all the line numbers that are being selected.
 
 
-#### Example:
+### Example:
 ```python
 import tkinter as tk
 
@@ -451,7 +451,7 @@ label.pack()
 root.mainloop()
 ```
 
-### 7. Scrollbar
+## 7. Scrollbar
 It refers to the slide controller which will be used to implement listed widgets. The general syntax is:
 ```
 w = Scrollbar(root, option=value)
@@ -474,7 +474,7 @@ scrollbar.config(command=mylist.yview)
 mainloop()
 ```
 
-### 8. Menu
+## 8. Menu
 It is used to create all kinds of menus used by the application. The general syntax is:
 ```
 w = Menu(master, option=value)
@@ -499,7 +499,7 @@ helpmenu.add_command(label='About')
 mainloop()
 ```
 
-### 9. Combobox
+## 9. Combobox
 Combobox widget is created using the ttk.Combobox class from the tkinter.ttk module. The values for the Combobox are specified using the values parameter.
 
 The default value is set using the set method. An event handler function on_select is bound to the Combobox using the bind method, which updates a label with the selected item whenever an item is selected.
@@ -531,14 +531,14 @@ combo_box.bind("<<ComboboxSelected>>", on_select)
 root.mainloop()
 ```
 
-### 10. Scale
+## 10. Scale
 It is used to provide a graphical slider that allows to select any value from that scale. The general syntax is:
 
-#### Syntax:
+### Syntax:
 ```
 w = Scale(root, option=value)
 ```
-#### Example
+### Example
 ```py
 from tkinter import *
 
@@ -550,15 +550,15 @@ w.pack()
 mainloop()
 ```
 
-### 11. TopLevel
+## 11. TopLevel
 This widget is directly controlled by the window manager. It don’t need any parent window to work on.The general syntax is:
 
-#### Synatx:
+### Synatx:
 ```
 w = TopLevel(master, option=value)
 ```
 
-#### Example:
+### Example:
 ```py
 from tkinter import *
 
@@ -569,13 +569,13 @@ top.title('Python3.9')
 top.mainloop()
 ```
 
-### 12. Message
+## 12. Message
 It refers to the multi-line and non-editable text. It works same as that of Label. The general syntax is:
-#### Synatx:
+### Synatx:
 ```
 w = Message(root, option=value)
 ```
-#### Example:
+### Example:
 ```py
 from tkinter import *
 
@@ -587,15 +587,15 @@ messageVar.pack()
 main.mainloop()
 ```
 
-### 13. MenuButton
+## 13. MenuButton
 It is a part of top-down menu which stays on the window all the time. Every menubutton has its own functionality. The general syntax is:
 
-#### Syntax:
+### Syntax:
 ```
 w = MenuButton(master, option=value)
 ```
 
-#### Syntax:
+### Syntax:
 ```py
 from tkinter import *
 
@@ -615,10 +615,10 @@ mb.pack()
 top.mainloop() 
 ```
 
-### 14. Progressbar
+## 14. Progressbar
 Tkinter application with a Progressbar widget and a button to start the progress. When the button is clicked, the progressbar fills up to 100% over a short period, simulating a task that takes time to complete.
 
-#### Example:
+### Example:
 ```py
 import tkinter as tk
 from tkinter import ttk
@@ -650,15 +650,15 @@ start_button.pack(pady=10)
 root.mainloop()
 ```
 
-### 15. SpinBox
+## 15. SpinBox
 It is an entry of ‘Entry’ widget. Here, value can be input by selecting a fixed value of numbers.The general syntax is:
 
-#### Syntax:
+### Syntax:
 ```
 w = SpinBox(master, option=value)
 ```
 
-#### Example:
+### Example:
 ```py
 from tkinter import *
 
@@ -670,15 +670,15 @@ w.pack()
 mainloop()
 ```
 
-### 16. Text
+## 16. Text
 To edit a multi-line text and format the way it has to be displayed. The general syntax is:
 
-#### Synatx:
+### Synatx:
 ```
 w  =Text(root, option=value)
 ```
 
-#### Example:
+### Example:
 ```py
 from tkinter import *
 
@@ -690,15 +690,15 @@ T.insert(END, 'Killer \nCODES\n')
 mainloop()
 ```
 
-### 17. Canvas
+## 17. Canvas
 It is used to draw pictures and other complex layout like graphics, text and widgets. The general syntax is:
 
-#### Syntax:
+### Syntax:
 ```
 w = Canvas(root, option=value)
 ```
 
-#### Example:
+### Example:
 ```py
 from tkinter import *
 
@@ -715,15 +715,15 @@ w.create_line(0, y, canvas_width, y )
 mainloop()
 ```
 
-### 18. PannedWindow
+## 18. PannedWindow
 It is a container widget which is used to handle number of panes arranged in it. The general syntax is:
 
-#### Syntax:
+### Syntax:
 ```
 w = PannedWindow(master, option=value)
 ```
 
-#### Example:
+### Example:
 ```py
 from tkinter import *
 
@@ -740,17 +740,17 @@ m2.add(top)
 mainloop()
 ```
 
-### 19. Frame 
+## 19. Frame 
 
 A frame is a rectangular region on the screen. A frame can also be used as a foundation class to implement complex widgets. It is used to organize a group of widgets.
 
-#### Syntax:
+### Syntax:
 ```
 Syntax:  w = frame(root, options)
 ```
 
 
-#### Tkinter Frame Options
+### Tkinter Frame Options
 The following are commonly used Options that can be used with this widget:
 
 - `bg`: This option used to represent the normal background color displayed behind the label and indicator.
@@ -763,7 +763,7 @@ The following are commonly used Options that can be used with this widget:
 - `relief`: The type of the border of the frame. It’s default value is set to FLAT.
 - `width`: This option used to represents the width of the frame.
 
-#### Example:
+### Example:
 ```py
 from tkinter import *
 
@@ -780,14 +780,14 @@ window.mainloop()
 
 ```
 
-### 20. Label Frame
+## 20. Label Frame
 
-#### Synatx:
+### Synatx:
 ```
 labelframe = ttk.LabelFrame(root, options) 
 ```
 
-#### Example:
+### Example:
 ```py
 import tkinter as tk 
 import tkinter.ttk as ttk 
@@ -811,14 +811,14 @@ left.pack()
 root.mainloop()
 ```
 
-### 21. Treeview
+## 21. Treeview
 
-#### Synatx
+### Synatx
 ```
 treev = ttk.Treeview(root, options)
 ```
 
-#### Example
+### Example
 ```py
 from tkinter import ttk
 import tkinter as tk
@@ -940,6 +940,6 @@ label.place(x=50, y=50)
 
 
 
-### Conclusion
+## Conclusion
 
 Tkinter provides a wide array of widgets and layout options for creating user-friendly desktop applications. This tutorial covers the basics, allowing you to build upon these examples to create more complex applications as needed! Feel free to experiment by combining different widgets and layout managers.
